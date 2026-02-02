@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Valentine</title>
+<style>
+body{
+font-family:Arial;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+height:100vh;
+margin:0;
+text-align:center;
+overflow:hidden;
+}
+.buttons{display:flex;gap:40px}
+button{padding:15px 30px;font-size:20px}
+#yes{transition:.3s}
+img{width:150px}
+</style>
+</head>
+
+<body>
+
+<img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
+
+<h1>Will you be my Valentine? 💖</h1>
+
+<div class="buttons">
+<button id="yes" onclick="yes()">YES</button>
+<button id="no" onclick="no()">NO</button>
+</div>
+
+<img src="https://media.giphy.com/media/l4Ki4biBSwhjyrS48/giphy.gif">
+
+<script>
+let i=0,scale=1;
+const msgs=[
+"Are you sure?",
+"Really sure??",
+"Babe pleaseee 🥺",
+"Don't do this to me 😭",
+"I'm gonna cry...",
+"Pretty please?",
+"Last chance 💔"
+];
+
+function no(){
+i++;
+if(i<=msgs.length)noBtn.innerText=msgs[i-1];
+scale*=1.8;
+yesBtn.style.transform=`scale(${scale})`;
+}
+
+const yesBtn=document.getElementById("yes");
+const noBtn=document.getElementById("no");
+
+function yes(){
+document.body.innerHTML="<h1>YAYYYY 💕 Happy Valentine's Day!</h1><img src='https://media.giphy.com/media/26BRv0ThflsHCqDrG/giphy.gif'>";
+}
+</script>
+
+</body>
+</html>
